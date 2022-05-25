@@ -18,7 +18,7 @@ function App(props){
         setTodos={setTodos} s
         etInputText={setInputText}
         />
-      <TodoList />
+      <TodoList todos={todos}/>
     </div>
   );
 };
