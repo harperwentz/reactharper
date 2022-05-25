@@ -1,23 +1,30 @@
 import React from "react";
+import TodoList from "./TodoList";
 
 
-function Form(setInputText){
+function Form(setInputText, todos, setTodos, inputText){
 
     const inputTextHandler = (event) => {
         console.log(event.target.value);
         setInputText(event.target.value);
     };
+    const submitTodoHandler = (e) => {
+        e.preventDefault();
+        setTodos([...todos, 
+            {text: inputTextHandler, completed: false, id: Math.random()}
+        ]);
+    };
   return(
     <form>
         <input onClick={inputTextHandler} type="text" className="todo-input" />
-        <button className="todo-button" type="submit">
+        <button onClick={submitTodoHandler} className="todo-button" type="submit">
             <i className="fas fa-plus-square"></i>
         </button>
         <div className="select">
             <select name="todos" class="filter-todo">
                 <option value="all">All</option>
-                <option value="done">Completed</option>
-                <option value="not done">Uncompleted</option>
+                <option value="complete">Completed</option>
+                <option value="incomplete">Uncompleted</option>
             </select>
         </div>
     </form>
