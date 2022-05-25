@@ -1,11 +1,11 @@
 import React from "react";
 
 
-function Form(props){
+function Form(setInputText){
 
     const inputTextHandler = (event) => {
         console.log(event.target.value);
-        props.setInputText;
+        setInputText(event.target.value);
     };
   return(
     <form>
