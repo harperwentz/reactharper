@@ -1,9 +1,145 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-image: linear-gradient(120deg, rgb(240, 97, 240), #fda085);
+  color: white;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+}
+
+header{
+  font-size: 1.5rem;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+header,form{
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form input, form button{
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: white;
+}
+
+form button{
+  color: black;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form button:hover{
+  background: black;
+  color: white;
+}
 
 
+.todo-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border:rgb(215, 104, 215);
+}
+.todo-list {
+  min-width: 25rem;
+  list-style: none;
+}
 
+.todo {
+  margin: 1rem;
+  background: white; 
+  color: black;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all .3s ease;
+}
 
-.todoapp{
-  height: 100vh;
-  background: lightblue;
+.todo li{
+  flex: 1;
 
+}
+
+.trashButton, .completeButton{
+  background: rgb(212, 68, 68);
+  color: white;
+  border: red;
+  padding: .75rem;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: right;
+}
+.completeButton{
+  background: green;
+  border: black;
+}
+
+.completeButton:hover{
+  background: rgb(123, 200, 123); 
+}
+
+.trashButton:hover{
+  background: rgb(240, 118, 118);
+}
+
+.todo-item{
+  padding: 0rem, 0.5rem;
+}
+
+.trash, .check{
+  pointer-events: none;
+}
+
+.completed{
+  text-decoration: line-through;
+  opacity: 1;
+}
+
+select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+}
+.select{
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+select{
+  color: black;
+  width: 10rem;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  background: #ff6f47;
+  cursor: pointer;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+select:hover::after{
+  background: white;
+  color:rgb(215, 104, 215); 
 }
