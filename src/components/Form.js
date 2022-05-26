@@ -2,7 +2,7 @@ import React from "react";
 import TodoList from "./TodoList";
 
 
-function Form(setInputText, todos, setTodos, inputText){
+function Form(setInputText, todos, setTodos, inputText, setStatus){
 
     const inputTextHandler = (event) => {
         console.log(event.target.value);
@@ -15,6 +15,11 @@ function Form(setInputText, todos, setTodos, inputText){
         ]);
         setInputText(" ");
     };
+
+    const getStatus = (e) => {
+        setStatus(e.target.value); 
+     };
+
   return(
     <form>
         <input value={inputText} onClick={inputTextHandler} type="text" className="todo-input" />
@@ -22,7 +27,7 @@ function Form(setInputText, todos, setTodos, inputText){
             <i className="fas fa-plus-square"></i>
         </button>
         <div className="select">
-            <select name="todos" class="filter-todo">
+            <select onChange={getStatus} name="todos" class="filter-todo">
                 <option value="all">All</option>
                 <option value="complete">Completed</option>
                 <option value="incomplete">Uncompleted</option>
